@@ -1,4 +1,4 @@
-## Ossus development notes
+## Ossus prototype development notes
 
 Mocking up elastic search using dummy data.
 
