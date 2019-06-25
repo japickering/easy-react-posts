@@ -17,6 +17,15 @@ p {
   font-size: 1em;
 }
 
+p {
+  margin: 0;
+}
+
+span {
+  display: inline-block;
+  padding: 4px;
+}
+
 img {
   display: block;
   width: 100%;
@@ -40,8 +49,64 @@ label {
   padding: 0;
 }
 
+.row {
+  width: 99%;
+}
+
+.badge-light {
+  text-transform: capitalize;
+}
+
+.credit {
+  color: #888;
+  font-size: 0.8em;
+}
+
 .border-white {
   border-right: 1px solid #fff;
+}
+
+.breadcrumb,
+.content {
+  background-color: rgb(240, 240, 240);
+}
+
+.breadcrumb-item {
+  color: grey;
+}
+
+.breadcrumb-item.active {
+  border-bottom: 1px solid orange;
+}
+
+.breadcrumb-item.active a {
+  color: orange;
+}
+
+.content {
+  flex: 0 0 80%;
+  max-width: 80%;
+  padding: 1em;
+}
+
+.feed {
+  margin-bottom: 5px;
+  padding: 1em;
+  vertical-align: top;
+  text-align: left;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.feed h3 {
+  color: cornflowerblue;
+}
+
+.feed .row {
+  padding-left: 1em;
+  background: white;
+  color: #666;
 }
 
 .header {
@@ -85,15 +150,4 @@ label {
 
 .card-body {
   padding: 0.5rem;
-}
-
-.feed {
-  padding: 4px;
-  vertical-align: top;
-  text-align: left;
-}
-
-.feed .row {
-  background: white;
-  color: #666;
 }

@@ -1,55 +1,115 @@
 import React, { Component } from "react";
 import "./App.css";
 
-const data = [
+const loremipsum =
+  "Documentation and loremipsums for typography, including global settings, headings, body text, lists, and more.";
+const example =
+  "Diabetes is a lifelong condition that causes a person's blood sugar level to become too high. There are 2 main types of diabetes: type 1 diabetes where the body's immune system attacks and destroys the cells that produce insulin.";
+
+const mockdata = [
   {
     id: 1,
     date: "01/06/2019",
+    author: "Jessica Jones",
     title: "article 1",
-    copy: "article summary"
+    summary: loremipsum,
+    badge: "Journal article",
+    category: "example category"
   },
   {
     id: 2,
     date: "02/06/2019",
-    title: "article 2",
-    copy: "article summary"
+    author: "Matt Murdock",
+    title: "diabetes",
+    summary: example,
+    badge: "Journal article",
+    category: "example category"
   },
   {
     id: 3,
     date: "24/06/2019",
+    author: "Dr Jones",
     title: "article 3",
-    copy: "article summary"
+    summary: loremipsum,
+    badge: "Journal article",
+    category: "example category"
   }
 ];
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      search: ""
+    };
+    this.onClick = this.onClick.bind(this);
+    this.onSearchChange = this.onSearchChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onClick() {
+    this.setState({ search: "all" });
+  }
+
+  onSearchChange(e) {
+    this.setState({ search: e.target.value });
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    this.setState({
+      isLoading: true
+    });
+    if (this.state.search.length > 2) {
+      console.log("search: " + this.state.search);
+    } else {
+      this.setState({ isLoading: false });
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <Header />
+        <div className="header">
+          <div className="row">
+            <div className="col-sm-3 col-md-2 col-lg-2">
+              <h1>OSSUS</h1>
+            </div>
+            <div className="col-sm-6 col-md-6 col-lg-3">
+              <form onSubmit={this.onSubmit}>
+                <input
+                  type="search"
+                  className="search"
+                  placeholder="Search.."
+                  onChange={this.onSearchChange}
+                  value={this.state.search}
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+
         <div className="row">
           <div className="col-sm-3 col-md-2 col-lg-2">
             <Sidebar />
           </div>
-          <div className="col-sm-6 col-md-6 col-lg-6">
-            <Feed />
-          </div>
-        </div>
-      </div>
-    );
-  }
-}
+          <div className="content col-sm-6 col-md-6 col-lg-6">
+            <nav aria-label="breadcrumb">
+              <ol className="breadcrumb">
+                <li className="breadcrumb-item">
+                  <a href="#" onClick={this.onClick}>
+                    Articles
+                  </a>
+                </li>
+                <li className="breadcrumb-item" aria-current="page">
+                  Casual Search
+                </li>
+              </ol>
+            </nav>
 
-class Header extends Component {
-  render() {
-    return (
-      <div className="header">
-        <div className="row">
-          <div className="col-sm-3 col-md-2 col-lg-2">
-            <h1>OSSUS</h1>
-          </div>
-          <div className="col-sm-6 col-md-6 col-lg-3">
-            <input type="search" className="search" placeholder="Search.." />
+            {this.state.search.length > 2 && (
+              <Feed search={this.state.search} />
+            )}
           </div>
         </div>
       </div>
@@ -76,7 +136,7 @@ class Sidebar extends Component {
           <input
             id={"radio" + item.id}
             type="radio"
-            name="filter"
+            name="option"
             value={item.value}
           />
           <label htmlFor={"radio" + item.id}>{item.label}</label>
@@ -88,18 +148,16 @@ class Sidebar extends Component {
         <div className="accordion">
           <div className="card">
             <div className="card-header" id="heading1">
-              <h3>
-                <button
-                  className="btn btn-link"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapse1"
-                  aria-expanded="false"
-                  aria-controls="collapse1"
-                >
-                  Dates
-                </button>
-              </h3>
+              <button
+                className="btn btn-tertiary"
+                type="button"
+                data-toggle="collapse"
+                data-target="#collapse1"
+                aria-expanded="false"
+                aria-controls="collapse1"
+              >
+                Dates
+              </button>
             </div>
 
             <div
@@ -119,20 +177,30 @@ class Sidebar extends Component {
 
 class Feed extends Component {
   render() {
-    const list = data.map(item => {
+    // const { search } = this.props;
+    const feed = mockdata.map(item => {
       return (
-        <div key={item.id} className="container">
+        <div key={item.id} className="container feed">
           <div className="row">
             <h3>{item.title}</h3>
           </div>
           <div className="row">
-            <p>{item.copy}</p>
+            <p>{item.summary}</p>
+          </div>
+          <div className="row">
+            <p>
+              <span className="badge badge-light">{item.badge}</span>
+              <span className="credit">{item.category}</span>
+              <span className="credit">
+                {item.author} {item.date}
+              </span>
+            </p>
           </div>
         </div>
       );
     });
 
-    return <div className="feed">{list}</div>;
+    return feed;
   }
 }
 
