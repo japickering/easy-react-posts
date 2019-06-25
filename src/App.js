@@ -10,29 +10,29 @@ const mockdata = [
   {
     id: 1,
     date: "01/06/2019",
-    author: "Jessica Jones",
-    title: "article 1",
-    summary: loremipsum,
-    badge: "Journal article",
-    category: "example category"
+    author: "jessica jones",
+    title: "article",
+    body: loremipsum,
+    badge: "journal article",
+    category: "example"
   },
   {
     id: 2,
     date: "02/06/2019",
-    author: "Matt Murdock",
+    author: "matt murdock",
     title: "diabetes",
-    summary: example,
-    badge: "Journal article",
-    category: "example category"
+    body: example,
+    badge: "journal article",
+    category: "example"
   },
   {
     id: 3,
     date: "24/06/2019",
-    author: "Dr Jones",
-    title: "article 3",
-    summary: loremipsum,
-    badge: "Journal article",
-    category: "example category"
+    author: "tony stark",
+    title: "article",
+    body: loremipsum,
+    badge: "journal article",
+    category: "example"
   }
 ];
 
@@ -42,13 +42,13 @@ class App extends Component {
     this.state = {
       search: ""
     };
-    this.onClick = this.onClick.bind(this);
+    this.onNavClick = this.onNavClick.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onClick() {
-    this.setState({ search: "all" });
+  onNavClick() {
+    this.setState({ search: "journal" });
   }
 
   onSearchChange(e) {
@@ -94,19 +94,22 @@ class App extends Component {
             <Sidebar />
           </div>
           <div className="content col-sm-6 col-md-6 col-lg-6">
-            <nav aria-label="breadcrumb">
-              <ol className="breadcrumb">
-                <li className="breadcrumb-item">
-                  <a href="#" onClick={this.onClick}>
-                    Articles
-                  </a>
-                </li>
-                <li className="breadcrumb-item" aria-current="page">
+            <ul class="nav nav-tabs mb-2">
+              <li class="nav-item">
+                <a
+                  className="nav-link active"
+                  href="#"
+                  onClick={this.onNavClick}
+                >
+                  Articles
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="#">
                   Casual Search
-                </li>
-              </ol>
-            </nav>
-
+                </a>
+              </li>
+            </ul>
             {this.state.search.length > 2 && (
               <Feed search={this.state.search} />
             )}
@@ -177,15 +180,22 @@ class Sidebar extends Component {
 
 class Feed extends Component {
   render() {
-    // const { search } = this.props;
-    const feed = mockdata.map(item => {
+    const { search } = this.props;
+    const filtered = mockdata.filter(
+      item =>
+        item.title === search ||
+        item.author.indexOf(search) !== -1 ||
+        item.badge.indexOf(search) !== -1 ||
+        item.body.indexOf(search) !== -1
+    );
+    const feed = filtered.map(item => {
       return (
         <div key={item.id} className="container feed">
           <div className="row">
             <h3>{item.title}</h3>
           </div>
           <div className="row">
-            <p>{item.summary}</p>
+            <p>{item.body}</p>
           </div>
           <div className="row">
             <p>
