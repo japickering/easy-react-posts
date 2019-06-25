@@ -1,7 +1,8 @@
 ## Ossus prototype development notes
 
-Mocking up elastic search of articles using dummy data.
+Mocking up article search using dummy data.
 Date range and article filtering is in development.
+You can search by author, and title and keyword search of article body text.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
