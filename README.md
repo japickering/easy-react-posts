@@ -1,6 +1,7 @@
 ## Ossus prototype development notes
 
-Mocking up elastic search using dummy data.
+Mocking up elastic search of articles using dummy data.
+Date range and article filtering is in development.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
