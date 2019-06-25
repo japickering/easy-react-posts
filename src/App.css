@@ -5,11 +5,17 @@ h1 {
   text-align: center;
 }
 
-h2, h3, h4, h5 {
+h2,
+h3,
+h4,
+h5 {
   text-transform: capitalize;
 }
 
-h3, p { display: block; font-size: 1em; }
+h3,
+p {
+  font-size: 1em;
+}
 
 img {
   display: block;
@@ -49,7 +55,7 @@ label {
 }
 
 .search {
-  width: 100%;
+  width: 98%;
   padding: 4px;
   padding-left: 8px;
   outline: 0;
@@ -58,11 +64,27 @@ label {
 }
 
 .sidebar {
-  padding: 4px;
   vertical-align: top;
+  color: #333;
   text-align: left;
-  background-color:goldenrod;
-  color: #fff;
+}
+
+.filters {
+  font-size: 1em;
+  padding: 1em;
+}
+
+.card {
+  border: 0;
+}
+
+.card-header {
+  padding: 0;
+  background: none;
+}
+
+.card-body {
+  padding: 0.5rem;
 }
 
 .feed {
