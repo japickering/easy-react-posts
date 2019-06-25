@@ -1,3 +1,7 @@
+## Ossus development notes
+
+Mocking up elastic search using dummy data.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
