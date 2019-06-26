@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Feed from "./components/feed.js";
 import Sidebar from "./components/sidebar.js";
-
+const TITLE = "BLUES NEWS";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -45,7 +45,7 @@ class App extends Component {
         <div className="header">
           <div className="row">
             <div className="col-sm-3 col-md-2 col-lg-2">
-              <h1>OSSUS</h1>
+              <h1>{TITLE}</h1>
             </div>
             <div className="col-sm-6 col-md-6 col-lg-4">
               <form className="form-inline" onSubmit={this.onSubmit}>
