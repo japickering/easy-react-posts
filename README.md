@@ -1,7 +1,7 @@
-## Ossus prototype development notes
+## Ossus prototype notes
 
-Date range and article filtering is in development.<br>
-You can search by author, title and keyword in article body text.
+Users can search by author, title and keyword in article body text.<br>
+Date filtering by year implemented.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
