@@ -7,6 +7,7 @@ export default class Feed extends Component {
     const filtered = data.filter(
       item =>
         item.title === search ||
+        item.year === search ||
         item.author.indexOf(search) !== -1 ||
         item.badge.indexOf(search) !== -1 ||
         item.body.indexOf(search) !== -1
@@ -15,11 +16,11 @@ export default class Feed extends Component {
       return (
         <div key={item.id} className="container feed">
           <div className="row">
-            <h3> {item.title} </h3>{" "}
-          </div>{" "}
+            <h3> {item.title} </h3>
+          </div>
           <div className="row">
-            <p> {item.body} </p>{" "}
-          </div>{" "}
+            <p> {item.body} </p>
+          </div>
           <div className="row">
             <p>
               <span className="badge badge-light"> {item.badge} </span>{" "}
