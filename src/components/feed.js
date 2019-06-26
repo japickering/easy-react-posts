@@ -27,9 +27,9 @@ export default class Feed extends Component {
               <span className="credit">
                 {" "}
                 {item.author} {item.date}{" "}
-              </span>{" "}
-            </p>{" "}
-          </div>{" "}
+              </span>
+            </p>
+          </div>
         </div>
       );
     });

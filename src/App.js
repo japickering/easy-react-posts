@@ -58,7 +58,7 @@ class App extends Component {
 
         <div className="row">
           <div className="col-sm-3 col-md-2 col-lg-2">
-            <Sidebar />
+            <Sidebar search={this.state.search} />
           </div>
           <div className="content col-sm-6 col-md-6 col-lg-6">
             <ul className="nav nav-tabs mb-2">

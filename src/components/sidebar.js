@@ -4,25 +4,40 @@ import React, { Component } from "react";
 export default class Sidebar extends Component {
   constructor(props) {
     super(props);
+    var d = new Date();
     this.state = {
       dates: [
         { id: 1, value: "all", label: "all time" },
-        { id: 2, value: "last5", label: "last 5 years" },
-        { id: 3, value: "lastyear", label: "last year" },
-        { id: 4, value: "lastmonth", label: "last month" }
+        { id: 2, value: d.getFullYear() - 5, label: "last 5 years" },
+        { id: 3, value: d.getFullYear() - 1, label: "last year" },
+        { id: 4, value: d.getMonth(), label: "last month" }
       ]
     };
+    console.log("dates:", this.state.dates);
   }
   render() {
+    const { search } = this.props;
+    const displayAll = "journal";
     const dates = this.state.dates.map(item => {
       return (
         <div key={item.id} className="date-filter">
-          <input
-            id={"radio" + item.id}
-            type="radio"
-            name="option"
-            value={item.value}
-          />
+          {search === displayAll && item.id === 1 && (
+            <input
+              id={"radio" + item.id}
+              type="radio"
+              name="option"
+              value={item.value}
+              checked="checked"
+            />
+          )}
+          {search !== displayAll && item.id > 1 && (
+            <input
+              id={"radio" + item.id}
+              type="radio"
+              name="option"
+              value={item.value}
+            />
+          )}
           <label htmlFor={"radio" + item.id}>{item.label}</label>
         </div>
       );
