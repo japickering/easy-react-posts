@@ -43,6 +43,23 @@ label {
   cursor: pointer;
 }
 
+.card {
+  border: 0;
+}
+
+.card-header {
+  padding: 2px;
+  background: none;
+}
+
+.card-body {
+  padding: 2px;
+}
+
+.nav-pills .nav-link.active {
+  background-color: cornflowerblue;
+}
+
 .container {
   display: block;
   margin: 0;
@@ -60,53 +77,30 @@ label {
 .credit {
   color: #888;
   font-size: 0.8em;
+  text-transform: capitalize;
 }
 
 .border-white {
   border-right: 1px solid #fff;
 }
 
-.breadcrumb,
 .content {
   background-color: rgb(240, 240, 240);
-}
-
-.breadcrumb-item {
-  color: grey;
-}
-
-.breadcrumb-item.active {
-  border-bottom: 1px solid orange;
-}
-
-.breadcrumb-item.active a {
-  color: orange;
 }
 
 .content {
   flex: 0 0 80%;
   max-width: 80%;
-  padding: 1em;
 }
 
 .feed {
+  margin-top: 5px;
   margin-bottom: 5px;
-  padding: 1em;
-  vertical-align: top;
-  text-align: left;
-  background-color: white;
-  border: 1px solid white;
-  border-radius: 8px;
+  padding: 5px;
 }
 
 .feed h3 {
   color: cornflowerblue;
-}
-
-.feed .row {
-  padding-left: 1em;
-  background: white;
-  color: #666;
 }
 
 .header {
@@ -137,17 +131,4 @@ label {
 .filters {
   font-size: 1em;
   padding: 1em;
-}
-
-.card {
-  border: 0;
-}
-
-.card-header {
-  padding: 0;
-  background: none;
-}
-
-.card-body {
-  padding: 0.5rem;
 }
