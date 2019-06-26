@@ -1,7 +1,7 @@
-## Ossus prototype development notes
+## Ossus UI development notes
 
-Date range and article filtering is in development.<br>
-You can search by author, title and keyword in article body text.
+This application is a proof of concept dashboard UI for a searchable database of medical journals aimed at users in B2B and Pharmaceutical companies.
+Users can search by author, title and keyword in article summary text. It does not connect to an API because this was for a front end technical test.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
