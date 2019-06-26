@@ -1,32 +1,32 @@
 [
   {
     "id": 1,
+    "title": "Working a new angle",
     "author": "jessica jones",
     "badge": "journal article",
-    "body": "Documentation and loremipsums for typography, including global settings, headings, body text, lists, and more",
+    "body": "Leading with sarcasm, breaking and entering. You know the usual (whisky bottle optional).",
     "category": "example",
     "date": "Jun 26 2016",
-    "year": "2016",
-    "title": "article"
+    "year": "2016"
   },
   {
     "id": 2,
+    "title": "Living a double life",
     "author": "matt murdock",
     "badge": "journal article",
-    "body": "Diabetes is a lifelong condition that causes a person's blood sugar level to become too high. There are 2 main types of diabetes: type 1 diabetes where the body's immune system attacks and destroys the cells that produce insulin.",
+    "body": "Fighting crime by night and working on a guilt complex by day.",
     "category": "example",
     "date": "Jun 26 2017",
-    "year": "2017",
-    "title": "diabetes"
+    "year": "2017"
   },
   {
     "id": 3,
+    "title": "Love you 3000",
     "author": "tony stark",
     "badge": "journal article",
-    "body": "Documentation and loremipsums for typography, including global settings, headings, body text, lists, and more",
+    "body": "Specialising in long form monologues in space and pithy one liners.",
     "category": "example",
     "date": "Jun 26 2018",
-    "year": "2018",
-    "title": "article"
+    "year": "2018"
   }
 ]

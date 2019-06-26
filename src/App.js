@@ -47,14 +47,14 @@ class App extends Component {
             <div className="col-sm-3 col-md-2 col-lg-2">
               <h1>OSSUS</h1>
             </div>
-            <div className="col-sm-6 col-md-6 col-lg-3">
-              <form onSubmit={this.onSubmit}>
+            <div className="col-sm-6 col-md-6 col-lg-4">
+              <form className="form-inline" onSubmit={this.onSubmit}>
                 <input
+                  className="form-control"
                   type="search"
-                  className="search"
                   placeholder="Search.."
                   onChange={this.onSearchChange}
-                  value={this.state.search}
+                  aria-label="Search"
                 />
               </form>
             </div>
@@ -66,20 +66,20 @@ class App extends Component {
             <Sidebar onChildDateChange={this.onChildDateChange} />
           </div>
 
-          <div className="content col-sm-6 col-md-6 col-lg-6">
-            <ul className="nav nav-tabs mb-2">
+          <div className="card col-sm-6 col-md-6 col-lg-6">
+            <ul class="nav nav-pills card-header-pills m-2">
               <li className="nav-item">
                 <a
                   className="nav-link active"
                   href="#"
                   onClick={this.onNavClick}
                 >
-                  Articles
+                  Hot topics
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Casual Search
+                <a className="nav-link disabled" href="#" aria-disabled="true">
+                  Disabled link
                 </a>
               </li>
             </ul>
