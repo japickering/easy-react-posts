@@ -7,11 +7,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: ""
+      search: "journal"
     };
     this.onNavClick = this.onNavClick.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onChildDateChange = this.onChildDateChange.bind(this);
   }
 
   onNavClick() {
@@ -20,6 +21,10 @@ class App extends Component {
 
   onSearchChange(e) {
     this.setState({ search: e.target.value });
+  }
+
+  onChildDateChange(val) {
+    this.setState({ search: val });
   }
 
   onSubmit(e) {
@@ -58,8 +63,9 @@ class App extends Component {
 
         <div className="row">
           <div className="col-sm-3 col-md-2 col-lg-2">
-            <Sidebar />
+            <Sidebar onChildDateChange={this.onChildDateChange} />
           </div>
+
           <div className="content col-sm-6 col-md-6 col-lg-6">
             <ul className="nav nav-tabs mb-2">
               <li className="nav-item">

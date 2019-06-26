@@ -4,16 +4,19 @@ import React, { Component } from "react";
 export default class Sidebar extends Component {
   constructor(props) {
     super(props);
+    var d = new Date();
     this.state = {
       dates: [
-        { id: 1, value: "all", label: "all time" },
-        { id: 2, value: "last5", label: "last 5 years" },
-        { id: 3, value: "lastyear", label: "last year" },
-        { id: 4, value: "lastmonth", label: "last month" }
+        { id: 1, value: "journal", label: "all time" },
+        { id: 2, value: "2016", label: "last 5 years" },
+        { id: 3, value: "2018", label: "last year" },
+        { id: 4, value: d.getMonth(), label: "last month" }
       ]
     };
+    //  console.log("dates:", this.state.dates);
   }
   render() {
+    const { onChildDateChange } = this.props;
     const dates = this.state.dates.map(item => {
       return (
         <div key={item.id} className="date-filter">
@@ -22,6 +25,7 @@ export default class Sidebar extends Component {
             type="radio"
             name="option"
             value={item.value}
+            onClick={() => onChildDateChange(item.value)}
           />
           <label htmlFor={"radio" + item.id}>{item.label}</label>
         </div>

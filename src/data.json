@@ -1,28 +1,32 @@
-[{
-      "id": 1,
-      "author": "jessica jones",
-      "badge": "journal article",
-      "body": "Documentation and loremipsums for typography, including global settings, headings, body text, lists, and more",
-      "category": "example",
-      "date": "Jun 26 2017",
-      "title": "article"
-   },
-   {
-      "id": 2,
-      "author": "matt murdock",
-      "badge": "journal article",
-      "body": "Diabetes is a lifelong condition that causes a person's blood sugar level to become too high. There are 2 main types of diabetes: type 1 diabetes where the body's immune system attacks and destroys the cells that produce insulin.",
-      "category": "example",
-      "date": "Jun 26 2018",
-      "title": "diabetes"
-   },
-   {
-      "id": 3,
-      "author": "tony stark",
-      "badge": "journal article",
-      "body": "Documentation and loremipsums for typography, including global settings, headings, body text, lists, and more",
-      "category": "example",
-      "date": "Jun 26 2019",
-      "title": "article"
-   }
+[
+  {
+    "id": 1,
+    "author": "jessica jones",
+    "badge": "journal article",
+    "body": "Documentation and loremipsums for typography, including global settings, headings, body text, lists, and more",
+    "category": "example",
+    "date": "Jun 26 2016",
+    "year": "2016",
+    "title": "article"
+  },
+  {
+    "id": 2,
+    "author": "matt murdock",
+    "badge": "journal article",
+    "body": "Diabetes is a lifelong condition that causes a person's blood sugar level to become too high. There are 2 main types of diabetes: type 1 diabetes where the body's immune system attacks and destroys the cells that produce insulin.",
+    "category": "example",
+    "date": "Jun 26 2017",
+    "year": "2017",
+    "title": "diabetes"
+  },
+  {
+    "id": 3,
+    "author": "tony stark",
+    "badge": "journal article",
+    "body": "Documentation and loremipsums for typography, including global settings, headings, body text, lists, and more",
+    "category": "example",
+    "date": "Jun 26 2018",
+    "year": "2018",
+    "title": "article"
+  }
 ]
