@@ -93,13 +93,13 @@ label {
   max-width: 80%;
 }
 
-.feed {
+.posts {
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 5px;
 }
 
-.feed h3 {
+.posts h3 {
   color: cornflowerblue;
 }
 
