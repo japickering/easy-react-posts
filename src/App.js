@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
-import Feed from "./components/feed.js";
 import Sidebar from "./components/sidebar.js";
+import Posts from "./components/posts.js";
+import Pagination from "./components/pagination.js";
 const TITLE = "BLUES NEWS";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -48,12 +50,12 @@ class App extends Component {
               <h1>{TITLE}</h1>
             </div>
             <div className='col-sm-6 col-md-6 col-lg-4'>
-              <form className='form-inline' onSubmit={this.onSubmit}>
+              <form onSubmit={this.onSubmit}>
                 <input
-                  className='form-control'
+                  className='search'
                   type='search'
-                  placeholder='Search..'
                   onChange={this.onSearchChange}
+                  placeholder='Search..'
                   aria-label='Search'
                 />
               </form>
@@ -84,7 +86,11 @@ class App extends Component {
               </li>
             </ul>
 
-            <Feed search={this.state.search} />
+            <Posts search={this.state.search} />
+            <Pagination
+              search={this.state.search}
+              onChildDateChange={this.onChildDateChange}
+            />
           </div>
         </div>
       </div>

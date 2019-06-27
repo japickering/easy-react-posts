@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import data from "../data.json";
 
-export default class Feed extends Component {
+export default class Posts extends Component {
   render() {
     const { search } = this.props;
     const filtered = data.filter(
@@ -12,9 +12,9 @@ export default class Feed extends Component {
         item.badge.indexOf(search) !== -1 ||
         item.body.indexOf(search) !== -1
     );
-    const feed = filtered.map(item => {
+    const posts = filtered.map(item => {
       return (
-        <div className='card feed' key={item.id}>
+        <div className='card posts' key={item.id}>
           <div className='card-header'>
             <h3> {item.title} </h3>
           </div>
@@ -31,6 +31,6 @@ export default class Feed extends Component {
       );
     });
 
-    return feed;
+    return posts;
   }
 }
