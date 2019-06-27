@@ -1,29 +1,26 @@
 import React, { Component } from "react";
-// import data from "../data.json";
 
 export default class Sidebar extends Component {
   constructor(props) {
     super(props);
-    var d = new Date();
     this.state = {
       dates: [
         { id: 1, value: "journal", label: "all time" },
         { id: 2, value: "2016", label: "last 5 years" },
         { id: 3, value: "2018", label: "last year" },
-        { id: 4, value: d.getMonth(), label: "last month" }
+        { id: 4, value: "2019", label: "last month" }
       ]
     };
-    //  console.log("dates:", this.state.dates);
   }
   render() {
     const { onChildDateChange } = this.props;
     const dates = this.state.dates.map(item => {
       return (
-        <div key={item.id} className="date-filter">
+        <div key={item.id} className='date-filter'>
           <input
             id={"radio" + item.id}
-            type="radio"
-            name="option"
+            type='radio'
+            name='option'
             value={item.value}
             onClick={() => onChildDateChange(item.value)}
           />
@@ -32,29 +29,29 @@ export default class Sidebar extends Component {
       );
     });
     return (
-      <div className="sidebar">
-        <div className="accordion">
-          <div className="card">
-            <div className="card-header" id="heading1">
+      <div className='sidebar'>
+        <div className='accordion'>
+          <div className='card'>
+            <div className='card-header' id='heading1'>
               <button
-                className="btn btn-tertiary"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapse1"
-                aria-expanded="false"
-                aria-controls="collapse1"
+                className='btn btn-tertiary'
+                type='button'
+                data-toggle='collapse'
+                data-target='#collapse1'
+                aria-expanded='false'
+                aria-controls='collapse1'
               >
                 Dates
               </button>
             </div>
 
             <div
-              id="collapse1"
-              className="collapse show"
-              aria-labelledby="heading1"
-              data-parent="#accordionExample"
+              id='collapse1'
+              className='collapse show'
+              aria-labelledby='heading1'
+              data-parent='#accordionExample'
             >
-              <div className="card-body">{dates}</div>
+              <div className='card-body'>{dates}</div>
             </div>
           </div>
         </div>

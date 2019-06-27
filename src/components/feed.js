@@ -14,17 +14,17 @@ export default class Feed extends Component {
     );
     const feed = filtered.map(item => {
       return (
-        <div className="card feed" key={item.id}>
-          <div className="card-header">
+        <div className='card feed' key={item.id}>
+          <div className='card-header'>
             <h3> {item.title} </h3>
           </div>
-          <div className="card-body">
+          <div className='card-body'>
             <p> {item.body} </p>
             <p>
-              <span className="badge badge-light">{item.badge}</span>
-              <span className="credit"> {item.category} </span>
-              <span className="credit">{item.author}</span>
-              <span className="credit">{item.date}</span>
+              <span className='badge badge-light'>{item.badge}</span>
+              <span className='credit'> {item.category} </span>
+              <span className='credit'>{item.author}</span>
+              <span className='credit'>{item.date}</span>
             </p>
           </div>
         </div>
