@@ -5,7 +5,7 @@ export default class Sidebar extends Component {
     super(props);
     this.state = {
       dates: [
-        { id: 1, value: "journal", label: "all time" },
+        { id: 1, value: "topic", label: "all time" },
         { id: 2, value: "2016", label: "last 5 years" },
         { id: 3, value: "2018", label: "last year" },
         { id: 4, value: "2019", label: "last month" }
