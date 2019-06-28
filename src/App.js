@@ -6,19 +6,20 @@ import Pagination from "./components/pagination.js";
 import "./App.css";
 
 const TITLE = "BLUES NEWS";
-const postsPerPage = 10;
-let currentPage = 1;
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: "journal"
+      search: "journal",
+      currentPage: 1,
+      postsPerPage: 10
     };
     this.onNavClick = this.onNavClick.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onChildDateChange = this.onChildDateChange.bind(this);
+    this.setPageNumber = this.setPageNumber.bind(this);
   }
 
   onNavClick() {
@@ -33,6 +34,10 @@ class App extends Component {
     this.setState({ search: val });
   }
 
+  setPageNumber(num) {
+    this.setState({ currentPage: num });
+  }
+
   onSubmit(e) {
     e.preventDefault();
     this.setState({
@@ -45,12 +50,6 @@ class App extends Component {
     }
   }
 
-  // Change page
-  paginate(num) {
-    currentPage = num;
-    console.log("currentPage" + currentPage);
-  }
-
   render() {
     const posts = data.filter(
       item =>
@@ -60,18 +59,18 @@ class App extends Component {
         item.badge.indexOf(this.state.search) !== -1 ||
         item.body.indexOf(this.state.search) !== -1
     );
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const indexOfLastPost = this.state.currentPage * this.state.postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - this.state.postsPerPage;
     const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
     return (
       <div className='App'>
         <div className='header'>
           <div className='row'>
-            <div className='col-sm-3 col-md-2 col-lg-2'>
+            <div className='col-sm-3 col-md-2 col-lg-2 mt-1'>
               <h1>{TITLE}</h1>
             </div>
-            <div className='col-sm-6 col-md-6 col-lg-4'>
+            <div className='col-sm-6 col-md-6 col-lg-4 mb-1'>
               <form onSubmit={this.onSubmit}>
                 <input
                   className='search'
@@ -110,9 +109,9 @@ class App extends Component {
 
             <Posts posts={currentPosts} />
             <Pagination
-              postsPerPage={postsPerPage}
+              postsPerPage={this.state.postsPerPage}
               totalPosts={posts.length}
-              paginate={this.paginate}
+              paginate={this.state.setPageNumber}
             />
           </div>
         </div>
