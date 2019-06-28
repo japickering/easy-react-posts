@@ -6,12 +6,13 @@ import Pagination from "./components/pagination.js";
 import "./App.css";
 
 const TITLE = "BLUES NEWS";
+const searchDefault = "topic";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: "journal",
+      search: searchDefault,
       currentPage: 1,
       postsPerPage: 10
     };
@@ -23,7 +24,7 @@ class App extends Component {
   }
 
   onNavClick() {
-    this.setState({ search: "journal" });
+    this.setState({ search: searchDefault });
   }
 
   onSearchChange(e) {
@@ -56,7 +57,7 @@ class App extends Component {
         item.title === this.state.search ||
         item.year === this.state.search ||
         item.author.indexOf(this.state.search) !== -1 ||
-        item.badge.indexOf(this.state.search) !== -1 ||
+        item.category.indexOf(this.state.search) !== -1 ||
         item.body.indexOf(this.state.search) !== -1
     );
     const indexOfLastPost = this.state.currentPage * this.state.postsPerPage;
@@ -97,7 +98,7 @@ class App extends Component {
                   href='!#'
                   onClick={this.onNavClick}
                 >
-                  Hot topics
+                  All Topics
                 </a>
               </li>
               <li className='nav-item'>
@@ -111,7 +112,7 @@ class App extends Component {
             <Pagination
               postsPerPage={this.state.postsPerPage}
               totalPosts={posts.length}
-              paginate={this.state.setPageNumber}
+              setPageNumber={this.setPageNumber}
             />
           </div>
         </div>

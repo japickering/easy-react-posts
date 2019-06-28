@@ -90,8 +90,8 @@ label {
   color: cornflowerblue;
 }
 
-.badge-light {
-  text-transform: capitalize;
+.posts p:after {
+  content: ".";
 }
 
 .credit {
@@ -123,9 +123,4 @@ label {
   vertical-align: top;
   color: #333;
   text-align: left;
-}
-
-.filters {
-  font-size: 1em;
-  padding: 1em;
 }
