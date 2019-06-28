@@ -85,12 +85,9 @@ label {
 }
 
 .content {
-  background-color: rgb(240, 240, 240);
-}
-
-.content {
   flex: 0 0 80%;
   max-width: 80%;
+  background-color: rgb(240, 240, 240);
 }
 
 .posts {
