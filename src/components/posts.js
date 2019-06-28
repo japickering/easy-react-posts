@@ -1,36 +1,24 @@
 import React, { Component } from "react";
-import data from "../data.json";
 
 export default class Posts extends Component {
   render() {
-    const { search } = this.props;
-    const filtered = data.filter(
-      item =>
-        item.title === search ||
-        item.year === search ||
-        item.author.indexOf(search) !== -1 ||
-        item.badge.indexOf(search) !== -1 ||
-        item.body.indexOf(search) !== -1
+    const { posts } = this.props;
+    return (
+      <div>
+        {posts.map(post => (
+          <div key={post.id} className='card posts'>
+            <div className='card-body'>
+              <h3>{post.title}</h3>
+              <p>{post.body}</p>
+            </div>
+            <div className='card-actions'>
+              <span className='badge-light'>{post.badge}</span>
+              <span className='credit'>{post.category}</span>
+              <span className='credit'>{post.author}</span>
+            </div>
+          </div>
+        ))}
+      </div>
     );
-    const posts = filtered.map(item => {
-      return (
-        <div className='card posts' key={item.id}>
-          <div className='card-header'>
-            <h3> {item.title} </h3>
-          </div>
-          <div className='card-body'>
-            <p> {item.body} </p>
-            <p>
-              <span className='badge badge-light'>{item.badge}</span>
-              <span className='credit'> {item.category} </span>
-              <span className='credit'>{item.author}</span>
-              <span className='credit'>{item.date}</span>
-            </p>
-          </div>
-        </div>
-      );
-    });
-
-    return posts;
   }
 }

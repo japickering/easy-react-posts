@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import "./App.css";
+import data from "./data.json";
 import Sidebar from "./components/sidebar.js";
 import Posts from "./components/posts.js";
 import Pagination from "./components/pagination.js";
+import "./App.css";
+
 const TITLE = "BLUES NEWS";
+const postsPerPage = 10;
+let currentPage = 1;
 
 class App extends Component {
   constructor(props) {
@@ -41,7 +45,25 @@ class App extends Component {
     }
   }
 
+  // Change page
+  paginate(num) {
+    currentPage = num;
+    console.log("currentPage" + currentPage);
+  }
+
   render() {
+    const posts = data.filter(
+      item =>
+        item.title === this.state.search ||
+        item.year === this.state.search ||
+        item.author.indexOf(this.state.search) !== -1 ||
+        item.badge.indexOf(this.state.search) !== -1 ||
+        item.body.indexOf(this.state.search) !== -1
+    );
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
     return (
       <div className='App'>
         <div className='header'>
@@ -73,23 +95,24 @@ class App extends Component {
               <li className='nav-item'>
                 <a
                   className='nav-link active'
-                  href='#'
+                  href='!#'
                   onClick={this.onNavClick}
                 >
                   Hot topics
                 </a>
               </li>
               <li className='nav-item'>
-                <a className='nav-link disabled' href='#' aria-disabled='true'>
+                <a className='nav-link disabled' href='!#' aria-disabled='true'>
                   Disabled link
                 </a>
               </li>
             </ul>
 
-            <Posts search={this.state.search} />
+            <Posts posts={currentPosts} />
             <Pagination
-              search={this.state.search}
-              onChildDateChange={this.onChildDateChange}
+              postsPerPage={postsPerPage}
+              totalPosts={posts.length}
+              paginate={this.paginate}
             />
           </div>
         </div>
