@@ -4,8 +4,9 @@ In this app demo users can search posts by author, title and keyword.<br>
 Date options in the sidebar let the user filter all the posts from a JSON file.<br>
 Pagination displays 10 posts per page by default set in App.js.
 
-## Loading data asynchronously from an external API request
-If you want to see how this works using an API use a Node plugin such as Axios. It has a simple hook to fetch JSON from secure API endpoints.
+## Loading static JSON using Gist
+
+If loading a static JSON is all you need then a simple GET request with a little help from herokuapp can do the job.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
