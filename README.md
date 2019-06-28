@@ -1,8 +1,11 @@
 # Easy React Posts Viewer
 
 In this app demo users can search posts by author, title and keyword.<br>
-A sidebar uses simple date matching to filter all the posts at once<br>
-Pagination is set to display 10 posts per page but this is can be easily customised through state.<br>
+Date options in the sidebar let the user filter all the posts from a JSON file.<br>
+Pagination displays 10 posts per page by default set in App.js.
+
+## Loading data asynchronously from an external API request
+If you want to see how this works using an API use a Node plugin such as Axios. It has a simple hook to fetch JSON from secure API endpoints.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
