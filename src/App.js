@@ -13,7 +13,7 @@ class App extends Component {
     this.state = {
       search: "journal",
       currentPage: 1,
-      postsPerPage: 5
+      postsPerPage: 10
     };
     this.onNavClick = this.onNavClick.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
@@ -109,9 +109,9 @@ class App extends Component {
 
             <Posts posts={currentPosts} />
             <Pagination
-              postsPerPage={postsPerPage}
+              postsPerPage={this.state.postsPerPage}
               totalPosts={posts.length}
-              paginate={this.setPageNumber}
+              paginate={this.state.setPageNumber}
             />
           </div>
         </div>
