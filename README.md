@@ -1,8 +1,8 @@
-## Fetching posts with date filtering and pagination in React JS
+# Easy React Posts Viewer
 
-Users can search by author, title and keyword in article body text.<br>
-Date filtering by year implemented.<br>
-Pagination tests added.
+In this app demo users can search posts by author, title and keyword.<br>
+A sidebar uses simple date matching to filter all the posts at once<br>
+Pagination is set to display 10 posts per page but this is can be easily customised through state.<br>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
