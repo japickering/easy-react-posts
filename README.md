@@ -1,4 +1,4 @@
-## Ossus prototype notes
+## Fetching posts with date filtering and pagination in React JS
 
 Users can search by author, title and keyword in article body text.<br>
 Date filtering by year implemented.<br>
