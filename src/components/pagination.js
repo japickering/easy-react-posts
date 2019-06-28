@@ -16,7 +16,7 @@ export default class Pagination extends Component {
               <li key={number} className='page-item'>
                 <a
                   onClick={() => setPageNumber(number)}
-                  href='!#'
+                  href='#'
                   className='page-link'
                 >
                   {number}
