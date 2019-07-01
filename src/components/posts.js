@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import Typist from "react-typist";
 
 export default class Posts extends Component {
   constructor(props) {
@@ -14,13 +15,13 @@ export default class Posts extends Component {
     return (
       <div>
         {posts.map(post => (
-          <div key={post.id} className='card posts'>
+          <div key={post.id} className='card posts bg-light mb-3'>
             <div className='card-body'>
-              <h3>{post.title}</h3>
-              <p>{this.ucFirst(post.body)}</p>
+              <h3 className='card-title'>{post.title}</h3>
+              <p className='card-text'>{post.body}</p>
             </div>
-            <div className='card-actions'>
-              <span className='badge-light'>{post.category}</span>
+            <div>
+              <span className='badge badge-secondary'>{post.category}</span>
               <span className='credit'>{post.author}</span>
               <span className='credit'>{post.date}</span>
             </div>
