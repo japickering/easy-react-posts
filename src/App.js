@@ -64,19 +64,18 @@ class App extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    // this.setState({
-    //   isLoading: true
-    // });
     if (this.state.search.length > 2) {
       console.log("search: " + this.state.search);
-    } else {
-      this.setState({ isLoading: false });
     }
   }
 
   render() {
     if (this.state.loading) {
-      return <h1>loading..</h1>;
+      return (
+        <div class='spinner-border m-5' role='status'>
+          <span class='sr-only'>Loading...</span>
+        </div>
+      );
     }
     if (!this.state.loading) {
       const data = this.state.results;

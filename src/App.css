@@ -81,8 +81,6 @@ label {
 }
 
 .posts {
-  margin-top: 5px;
-  margin-bottom: 5px;
   padding: 5px;
 }
 
@@ -90,8 +88,21 @@ label {
   color: cornflowerblue;
 }
 
-.posts p:after {
-  content: ".";
+.card.posts .card-title,
+.card.posts .card-text,
+.card.posts span {
+  animation: reveal 0.7s ease-in;
+}
+
+@keyframes reveal {
+  from {
+    color: whitesmoke;
+    /* width: 0; */
+  }
+  to {
+    color: inherit;
+    /* width: 100%; */
+  }
 }
 
 .credit {
