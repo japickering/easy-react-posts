@@ -1,12 +1,21 @@
-# Easy React Posts Viewer
+# Easy React Posts
+
+## Main features
 
 In this app demo users can search posts by author, title and keyword.<br>
-Date options in the sidebar let the user filter all the posts from a JSON file.<br>
-Pagination displays 10 posts per page by default set in App.js.
+Sidebar options let users filter posts by date ranges from JSON data.<br>
+Pagination displays 10 posts per page by default but this can be customised.
 
-## Loading static JSON using Gist
+[View the live demo](https://focused-kirch-c30f1e.netlify.com/)
 
-If loading a static JSON is all you need then a simple GET request with a little help from herokuapp can do the job.
+## Handling the JSON data
+
+In this demo I'm requesting the JSON data when the main component is mounted before enabling live search.<br>
+Gists load pretty damn quick thanks to how Github serves user generated content.<br>
+For a series of posts containing mostly text data this is fine but with a lot of images you may need to setup your asynchonous requests differently.
+
+## Customising the navigation
+The disabled link shows a typical setup when we want show a client what search options premium users would have access to as part of their account. One might build out a login modal or popup to show this in action
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
