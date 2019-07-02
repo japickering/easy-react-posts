@@ -14,7 +14,8 @@ In this demo I'm requesting the JSON data when the main component is mounted bef
 Gists load pretty damn quick thanks to how Github serves user generated content.<br>
 For a series of posts containing mostly text data this is fine but with a lot of images you may need to setup your asynchonous requests differently.
 
-## Customising the navigation
+## Customising the navigation
+
 The disabled link shows a typical setup when we want show a client what search options premium users would have access to as part of their account. One might build out a login modal or popup to show this in action
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
