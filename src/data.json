@@ -1,13 +1,26 @@
 [
   {
-    "author": "anonymous",
     "id": 1,
-    "badge": "journal",
-    "category": "topic",
-    "date": "26 Jun 2016",
-    "year": "2016",
-    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    "author": "red hot chill peppers",
+    "badge": "album",
+    "category": "alternative",
+    "img": "https://i.scdn.co/image/260c7a6da14bb13a4cc9e75bf5b549fb87fa22a9",
+    "date": "1999",
+    "year": "1999",
+    "title": "californication",
+    "spotify": "https://open.spotify.com/album/2Y9IRtehByVkegoD7TcLfi?si=XrfRTQhzRDi1qacMsD2wgQ",
+    "plist": [
+      "californication",
+      "get on top",
+      "dani california",
+      "by the way",
+      "other side",
+      "under the bridge",
+      "dark necessorties",
+      "emit remmus",
+      "savior",
+      "quixoticelixer"
+    ]
   },
   {
     "author": "anonymous",

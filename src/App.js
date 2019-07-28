@@ -5,7 +5,7 @@ import Posts from "./components/posts.js";
 import Pagination from "./components/pagination.js";
 import "./App.css";
 
-const TITLE = "BLUES NEWS";
+const TITLE = "My Dashboard";
 const searchDefault = "topic";
 
 class App extends Component {
@@ -20,6 +20,7 @@ class App extends Component {
     };
     this.fetchFromGist = this.fetchFromGist.bind(this);
     this.onNavClick = this.onNavClick.bind(this);
+    this.onNavClickAlbum = this.onNavClickAlbum.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onChildDateChange = this.onChildDateChange.bind(this);
@@ -48,6 +49,10 @@ class App extends Component {
 
   onNavClick() {
     this.setState({ search: searchDefault });
+  }
+
+  onNavClickAlbum() {
+    this.setState({ search: "album" });
   }
 
   onSearchChange(e) {
@@ -84,8 +89,8 @@ class App extends Component {
           item.title === this.state.search ||
           item.year === this.state.search ||
           item.author.indexOf(this.state.search) !== -1 ||
-          item.category.indexOf(this.state.search) !== -1 ||
-          item.body.indexOf(this.state.search) !== -1
+          item.badge.indexOf(this.state.search) !== -1 ||
+          item.category.indexOf(this.state.search) !== -1
       );
       const indexOfLastPost = this.state.currentPage * this.state.postsPerPage;
       const indexOfFirstPost = indexOfLastPost - this.state.postsPerPage;
@@ -95,10 +100,10 @@ class App extends Component {
         <div className='App'>
           <div className='header'>
             <div className='row'>
-              <div className='col-sm-3 col-md-2 col-lg-2 mt-1'>
+              <div className='col-sm-3 col-md-3 col-lg-2 mt-1 ml-2'>
                 <h1>{TITLE}</h1>
               </div>
-              <div className='col-sm-6 col-md-6 col-lg-4 mb-1'>
+              <div className='col-sm-6 col-md-6 col-lg-4 m-1'>
                 <form onSubmit={this.onSubmit}>
                   <input
                     className='search'
@@ -118,24 +123,21 @@ class App extends Component {
             </div>
 
             <div className='card col-sm-6 col-md-6 col-lg-6'>
-              <ul className='nav nav-pills card-header-pills m-2'>
+              <ul className='nav nav-pills m-2'>
                 <li className='nav-item'>
-                  <a
-                    className='nav-link active'
-                    href='#'
-                    onClick={this.onNavClick}
-                  >
+                  <button className='nav-link' onClick={this.onNavClick}>
                     All Topics
-                  </a>
+                  </button>
                 </li>
                 <li className='nav-item'>
-                  <a
-                    className='nav-link disabled'
-                    href='!#'
+                  <button
+                    className='nav-link'
+                    href='#'
                     aria-disabled='true'
+                    onClick={this.onNavClickAlbum}
                   >
-                    Disabled link
-                  </a>
+                    Albums
+                  </button>
                 </li>
               </ul>
 
