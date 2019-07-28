@@ -4,9 +4,9 @@ export default class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dates: [
-        { id: 1, value: "topic", label: "all time" },
-        { id: 2, value: "2016", label: "last 5 years" },
+      filters: [
+        { id: 1, value: "album", label: "my albums" },
+        { id: 2, value: "2016", label: "last 3 years" },
         { id: 3, value: "2018", label: "last year" },
         { id: 4, value: "2019", label: "last month" }
       ]
@@ -14,7 +14,7 @@ export default class Sidebar extends Component {
   }
   render() {
     const { onChildDateChange } = this.props;
-    const dates = this.state.dates.map(item => {
+    const filters = this.state.filters.map(item => {
       return (
         <div key={item.id} className='date-filter'>
           <input
@@ -41,7 +41,7 @@ export default class Sidebar extends Component {
                 aria-expanded='false'
                 aria-controls='collapse1'
               >
-                Dates
+                Filters
               </button>
             </div>
 
@@ -51,7 +51,7 @@ export default class Sidebar extends Component {
               aria-labelledby='heading1'
               data-parent='#accordionExample'
             >
-              <div className='card-body'>{dates}</div>
+              <div className='card-body'>{filters}</div>
             </div>
           </div>
         </div>

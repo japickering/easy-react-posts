@@ -1,24 +1,55 @@
 import React, { Component } from "react";
-// import Typist from "react-typist";
 
 export default class Posts extends Component {
   constructor(props) {
     super(props);
     this.ucFirst = this.ucFirst.bind(this);
+    this.getPlaylist = this.getPlaylist.bind(this);
   }
+
   ucFirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
+  getPlaylist(post) {
+    let plist = post.plist.map(song => {
+      return (
+        <li>
+          <a
+            className='btn-link'
+            href={post.spotify}
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+            {this.ucFirst(song)}
+          </a>
+        </li>
+      );
+    });
+    return plist;
+  }
+
   render() {
     const { posts } = this.props;
+
     return (
       <div>
         {posts.map(post => (
           <div key={post.id} className='card posts bg-light mb-3'>
             <div className='card-body'>
               <h3 className='card-title'>{post.title}</h3>
-              <p className='card-text'>{post.body}</p>
+              {!post.plist && <p className='card-text'>{post.body}</p>}
+              {post.plist && (
+                <div className='row'>
+                  <div className='col-sm-12 col-md-6'>
+                    <img className='cover-art' src={post.img} alt='' />
+                  </div>
+                  <div className='col-sm-12 col-md-6'>
+                    <h3>Listen on Spotify</h3>
+                    <ul class='playlist'>{this.getPlaylist(post)}</ul>
+                  </div>
+                </div>
+              )}
             </div>
             <div>
               <span className='badge badge-secondary'>{post.category}</span>

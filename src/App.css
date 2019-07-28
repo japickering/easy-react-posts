@@ -2,7 +2,6 @@ h1 {
   color: white;
   font-size: 1.4em;
   font-weight: bold;
-  text-align: center;
 }
 
 h2,
@@ -12,13 +11,11 @@ h5 {
   text-transform: capitalize;
 }
 
-h3,
+h3 {
+  font-size: 1.2em;
+}
 p {
   font-size: 1em;
-}
-
-p {
-  margin: 0;
 }
 
 span {
@@ -60,8 +57,10 @@ label {
   padding: 2px;
 }
 
-.nav-pills .nav-link.active {
-  background-color: cornflowerblue;
+.nav-pills .nav-link.active,
+.nav-pills .nav-link:hover {
+  background-color: rgb(0, 100, 200);
+  color: #fff;
 }
 
 .container {
@@ -85,7 +84,7 @@ label {
 }
 
 .posts h3 {
-  color: cornflowerblue;
+  font-weight: bold;
 }
 
 .card.posts .card-title,
