@@ -3,7 +3,8 @@
 ## Main features
 
 In this app demo users can search posts by author, title and keyword.<br>
-Sidebar options let users filter posts by date ranges from JSON data.<br>
+Sidebar options let users filter posts by date values.<br>
+Added getPlaylist() in components/post.js when passed a post object returns a spotify playlist from GIST JSON data.<br>
 Pagination displays 10 posts per page by default but this can be customised.
 
 [View the live demo](https://focused-kirch-c30f1e.netlify.com/)
