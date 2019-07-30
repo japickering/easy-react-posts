@@ -21,7 +21,7 @@ export default class Posts extends Component {
             rel='noopener noreferrer'
             target='_blank'
           >
-            {this.ucFirst(song)}
+            <i class='fas fa-music' /> {this.ucFirst(song)}
           </a>
         </li>
       );
