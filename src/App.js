@@ -34,7 +34,7 @@ class App extends Component {
   // Load our JSON from a Gist on Github
   fetchFromGist() {
     const URI =
-      "https://gist.githubusercontent.com/japickering/386bc527b6800043f4914e84bb73d2c3/raw/";
+      "https://gist.githubusercontent.com/japickering/7d45bfea260ec26f9d1fc075441fc8fd/raw/";
     fetch(`https://cors-anywhere.herokuapp.com/${URI}`)
       .then(function(res) {
         return res.json();
