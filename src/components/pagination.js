@@ -14,13 +14,12 @@ export default class Pagination extends Component {
           <ul className='pagination'>
             {pageNumbers.map(number => (
               <li key={number} className='page-item'>
-                <a
+                <button
                   onClick={() => setPageNumber(number)}
-                  href='#'
                   className='page-link'
                 >
                   {number}
-                </a>
+                </button>
               </li>
             ))}
           </ul>

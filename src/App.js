@@ -4,6 +4,7 @@ import Sidebar from "./components/sidebar.js";
 import Posts from "./components/posts.js";
 import Pagination from "./components/pagination.js";
 import "./App.css";
+const config = require('./config.js');
 
 const TITLE = "My Dashboard";
 const searchDefault = "topic";
@@ -18,7 +19,7 @@ class App extends Component {
       currentPage: 1,
       postsPerPage: 10
     };
-    this.fetchFromGist = this.fetchFromGist.bind(this);
+    this.loadData = this.loadData.bind(this);
     this.onNavClick = this.onNavClick.bind(this);
     this.onNavClickAlbum = this.onNavClickAlbum.bind(this);
     this.onSearchChange = this.onSearchChange.bind(this);
@@ -28,13 +29,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.fetchFromGist();
+    this.loadData();
   }
 
   // Load our JSON from a Gist on Github
-  fetchFromGist() {
-    const URI =
-      "https://gist.githubusercontent.com/japickering/7d45bfea260ec26f9d1fc075441fc8fd/raw/";
+  loadData() {
+    const URI = config.getURI();    
     fetch(`https://cors-anywhere.herokuapp.com/${URI}`)
       .then(function(res) {
         return res.json();
@@ -77,8 +77,8 @@ class App extends Component {
   render() {
     if (this.state.loading) {
       return (
-        <div class='spinner-border m-5' role='status'>
-          <span class='sr-only'>Loading...</span>
+        <div className='spinner-border m-5' role='status'>
+          <span className='sr-only'>Loading...</span>
         </div>
       );
     }
