@@ -4,8 +4,8 @@
 
 In this app demo users can search posts by author, title and keyword.<br>
 Sidebar options let users filter posts by date values.<br>
-Added getPlaylist() in components/post.js when passed a post object returns a spotify playlist from GIST JSON data.<br>
-Pagination displays 10 posts per page by default but this can be customised.
+The function getPlaylist() in components/post.js when passed a post object returns a Spotify playlist from GIST JSON data.<br>
+Pagination displays 10 posts per page by default but this can be customiseds.
 
 [View the live demo](https://focused-kirch-c30f1e.netlify.com/)
 
@@ -15,7 +15,7 @@ In this demo I'm requesting the JSON data when the main component is mounted bef
 Gists load pretty damn quick thanks to how Github serves user generated content.<br>
 For a series of posts containing mostly text data this is fine but with a lot of images you may need to setup your asynchonous requests differently.
 
-## Customising the navigation
+## Customising navigation
 
 The disabled link shows a typical setup when we want show a client what search options premium users would have access to as part of their account. One might build out a login modal or popup to show this in action
 
