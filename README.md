@@ -7,8 +7,6 @@ Sidebar options let users filter posts by date values.<br>
 The function getPlaylist() in components/post.js when passed a post object returns a Spotify playlist from GIST JSON data.<br>
 Pagination displays 10 posts per page by default but this can be customiseds.
 
-[View the live demo](https://focused-kirch-c30f1e.netlify.com/)
-
 ## Handling the JSON data
 
 In this demo I'm requesting the JSON data when the main component is mounted before enabling live search.<br>
