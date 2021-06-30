@@ -67,6 +67,30 @@ label {
   color: #fff;
 }
 
+.header {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: cornflowerblue;
+  color: #fff;
+}
+
+.search {
+  width: 50%;
+  padding: 8px;
+  outline: 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.sidebar {
+  vertical-align: top;
+  color: #333;
+  text-align: left;
+}
+
 .container {
   display: block;
   margin: 0;
@@ -112,29 +136,4 @@ label {
   color: #888;
   font-size: 0.8em;
   text-transform: capitalize;
-}
-
-.header {
-  display: block;
-  width: 100%;
-  margin: 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-color: cornflowerblue;
-  color: #fff;
-}
-
-.search {
-  width: 98%;
-  padding: 4px;
-  padding-left: 8px;
-  outline: 0;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-
-.sidebar {
-  vertical-align: top;
-  color: #333;
-  text-align: left;
 }

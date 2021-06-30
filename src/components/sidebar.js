@@ -13,7 +13,7 @@ export default class Sidebar extends Component {
     };
   }
   render() {
-    const { onChildDateChange } = this.props;
+    const { onDateChange } = this.props;
     const filters = this.state.filters.map(item => {
       return (
         <div key={item.id} className='date-filter'>
@@ -22,7 +22,7 @@ export default class Sidebar extends Component {
             type='radio'
             name='option'
             value={item.value}
-            onClick={() => onChildDateChange(item.value)}
+            onClick={() => onDateChange(item.value)}
           />
           <label htmlFor={"radio" + item.id}>{item.label}</label>
         </div>
